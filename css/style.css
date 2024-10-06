@@ -136,3 +136,56 @@ html, body {
 .navbar-fixed {
     z-index: 1000; /* Ensure navbar stays above the map */
 }
+
+/* css/style.css */
+
+/* Existing styles... */
+
+/* Ship Information Box */
+.ship-info {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    max-width: 90%;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000; /* Ensure it stays above the map */
+}
+
+.ship-info h5 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+/* Highlighted Marker Styling */
+.highlighted-marker {
+    border: 2px solid red;
+    background-color: rgba(0, 0, 255, 0.5); /* 50% transparent blue */
+    border-radius: 50%;
+}
+
+/* css/style.css */
+
+/* Existing styles... */
+
+/* Custom DivIcon for Ship Marker */
+.ship-marker {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/ship.png'); /* Replace with your ship icon URL */
+    background-size: cover;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Highlighted Ship Marker */
+.ship-marker.highlighted {
+    border: 2px solid red;
+    background-color: rgba(0, 0, 255, 0.5); /* 50% transparent blue overlay */
+    background-blend-mode: multiply;
+}
