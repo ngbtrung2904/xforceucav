@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Recognition - Home</title>
+    
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Inline Styles for Map Positioning -->
+    <style>
+        /* Ensure html and body take full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Adjust the map to fill the viewport below the fixed navbar */
+        #map {
+            position: absolute;
+            top: 64px; /* Height of navbar on desktop */
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        /* Adjust map position for mobile devices */
+        @media only screen and (max-width: 992px) {
+            #map {
+                top: 56px; /* Height of navbar on mobile */
+            }
+        }
+
+        /* Remove any default padding or margins */
+        .navbar-fixed {
+            z-index: 1000; /* Ensure navbar stays above the map */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Navigation Bar -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue">
+                <a href="index.html" class="brand-logo center">Ship Recognition</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="summarize.html">Summarize</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#" id="logout"><i class="material-icons">exit_to_app</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Initialize the map after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Leaflet map
+            var map = L.map('map').setView([16.0544, 108.2022], 13); // Coordinates for Danang Beach
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Add a marker for Danang Beach
+            L.marker([16.0544, 108.2022]).addTo(map)
+                .bindPopup('Danang Beach')
+                .openPopup();
+            
+            // Trigger map resize on window resize to ensure proper rendering
+            window.addEventListener('resize', function() {
+                map.invalidateSize();
+            });
+        });
+    </script>
+</body>
+</html>

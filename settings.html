@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Recognition - Settings</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="index.html" class="brand-logo center">Ship Recognition</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="summarize.html">Summarize</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#" id="logout"><i class="material-icons">exit_to_app</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Settings Content -->
+    <div class="container" style="margin-top: 20px;">
+        <div class="card z-depth-3">
+            <div class="card-content">
+                <span class="card-title">Settings</span>
+                <div class="row">
+                    <form class="col s12">
+                        <!-- Example Settings Form -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="usernameSetting" type="text" class="validate">
+                                <label for="usernameSetting">Username</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="emailSetting" type="email" class="validate">
+                                <label for="emailSetting">Email</label>
+                            </div>
+                        </div>
+                        <!-- Add more settings fields as needed -->
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                    Save Changes
+                                    <i class="material-icons right">save</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
